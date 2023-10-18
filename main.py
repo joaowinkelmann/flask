@@ -1,5 +1,5 @@
 import json
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 
 from dbController import dbController as controller
 from databaseBuilder import databaseBuilder as builder
@@ -11,9 +11,7 @@ builder.build()
 
 @app.route('/')
 def hello_world():
-    # q: how do i return a .html file from the base folder here?
     return render_template('index.html')
-    # return 
 
 @app.route('/ws', methods=["POST", "GET"])
 def ws():
