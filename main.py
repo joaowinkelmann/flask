@@ -18,7 +18,8 @@ def ws():
         #sanitize data, check if all fields are present
         if (data == None or data['temperature'] == None or data['humidity'] == None or data['dewpoint'] == None or data['pressure'] == None or data['speed'] == None or data['direction'] == None or data['datetime'] == None):
             return "False"
-        return controller.insert(data['temperature'], data['humidity'], data['dewpoint'], data['pressure'], data['speed'], data['direction'], data['datetime'])
+        controller.insert(data['temperature'], data['humidity'], data['dewpoint'], data['pressure'], data['speed'], data['direction'], data['datetime'])
+        return json.dumps(data)
     else:
         return json.dumps(controller.get())
 
