@@ -6,6 +6,8 @@ from databaseBuilder import databaseBuilder as builder
 
 app = Flask(__name__)
 
+# construindo a database, a partir do json já existente
+builder.build()
 
 @app.route('/')
 def hello_world():
@@ -23,11 +25,6 @@ def ws():
         return json.dumps(data)
     else:
         return json.dumps(controller.get())
-    
-@app.route('/build', methods=["PUT"])
-def build():
-    builder.build()
-    return "Base de dados construída com sucesso"
 
 if __name__ == '__main__':
     app.run()

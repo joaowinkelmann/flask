@@ -7,6 +7,8 @@ class dbController:
         conn = sqlite3.connect('weather.db')
         cursor = conn.cursor()
         cursor.execute('INSERT INTO weather VALUES (?, ?, ?, ?, ?, ?, ?)', (temperature, humidity, dewpoint, pressure, speed, direction, datetime))
+        conn.commit()
+        conn.close()
         return True
 
     def get():
