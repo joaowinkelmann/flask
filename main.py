@@ -2,9 +2,12 @@ import json
 from flask import Flask, request, jsonify
 
 from dbController import dbController as controller
+from databaseBuilder import databaseBuilder as builder
 
 app = Flask(__name__)
 
+# construindo a database, a partir do json já existente
+builder.build()
 
 @app.route('/')
 def hello_world():
