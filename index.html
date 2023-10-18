@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous"></head>
+<body>
+    <div class="d-flex justify-content-center align-items-center" style="height: 100vh">
+        <div class="text-center">
+            <h3>Web-service de previsão do tempo</h3>
+            <div>
+                <h4 class="text-primary">POST</h4>
+                <p>Realize um post para a rota "/ws" (https://url.com/ws), com as seguintes informações no body. Exemplo: </p>
+                <code>
+                    {
+                        "temperature": "24.85",
+                        "humidity": "68.50",
+                        "dewpoint": "18.78",
+                        "pressure": "1011.44",
+                        "speed": "3.99",
+                        "direction": "SW",
+                        "datetime": "22-Jul-2021 12:54"
+                    }
+                </code>
+            </div>
+
+            <div>
+                <h4 class="text-primary">GET</h4>
+                <p>Realize um get para a rota "/ws" (https://url.com/ws), para que possa receber as informações da base em um formato JSON.
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -11,7 +11,9 @@ builder.build()
 
 @app.route('/')
 def hello_world():
-    return 'Hello, World!'
+    # q: how do i return a .html file from the base folder here?
+    return render_template('index.html')
+    # return 
 
 @app.route('/ws', methods=["POST", "GET"])
 def ws():
