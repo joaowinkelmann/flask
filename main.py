@@ -1,4 +1,5 @@
-from flask import Flask, request
+import json
+from flask import Flask, request, jsonify
 
 from dbController import dbController as controller
 
@@ -19,7 +20,7 @@ def ws():
             return "False"
         return controller.insert(data['temperature'], data['humidity'], data['dewpoint'], data['pressure'], data['speed'], data['direction'], data['datetime'])
     else:
-        return controller.get()
+        return json.dumps(controller.get())
 
 if __name__ == '__main__':
     app.run()
